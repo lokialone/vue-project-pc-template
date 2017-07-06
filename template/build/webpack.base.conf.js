@@ -8,7 +8,7 @@ var vueLoaderConfig = require('./vue-loader.conf');
 var entry = projectConfig.singlePage ? { app: './src/main.js' } :
     utils.generateMultiEntry(projectConfig.multiPageNames);
 
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
@@ -22,9 +22,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            {{#if_eq build "standalone"}}
             'vue$': 'vue/dist/vue.esm.js',
-            {{/if_eq}}
             '@': resolve('src')
         }
     },
